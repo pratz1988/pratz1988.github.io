@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="memoryGame.css">
+</head>
+<body>
+    <div id='mainContainer'>
+        <header>
+             <h1> Memory Game For Kids</h1>
+             <button id='button1' class='grid' name='submit' type='submit'>2*2</button>
+             <button name='submit' class='grid' type='submit'>3*2</button>
+             <button name='submit' class='grid' type='submit'>4*2</button>
+             <button name='submit' class='grid' type='submit'>4*4</button>           
+        </header>
+        <section>
+                <span class="moves">0</span> Moves | Time:
+                <span class="timer">0</span> s
+                <button type="sumbit" name="submit" class='reset'>Reload Page</button>
+        </section>
+        <main id="cardContainer">
+            <!-- <div id='imageContainer'></div> -->
+        </main>
+      
+    </div>
+    <!-- Script Tags -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="memoryGame.js" charset="utf-8"></script>
+    
+</body>
+</html>
