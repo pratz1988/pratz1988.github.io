@@ -53,18 +53,21 @@ const  shuffle = (array) => {
 
 // Event Listener to render images based on grid size
 const init = () => {
+    alert('click on any button to start the game');
+    
     $('.grid').on('click',(event) => {
-       
+        
     //// Get The Grid Size 
     const gridValue = $(event.currentTarget).text();  
     const size = gridValue.split('');  
     gridSize1 = parseInt(size[0],10);
     gridSize2 = parseInt(size[2],10);
-    console.log("gridSize....."+gridSize1*gridSize2);
+    // console.log("gridSize....."+gridSize1*gridSize2);
 
     // comparimg grid sizes if you want to change the grid size if you already clicked another grid size
     compareGridSize.push(gridSize1*gridSize2);
     if( compareGridSize.length >= 2 ) {
+        console.log(compareGridSize.length);
         if(compareGridSize[0] != compareGridSize[1])
         {
             alert("plese click reload page button if you want to change the grid size");
@@ -90,41 +93,40 @@ const init = () => {
        if( shuffleImagesArray.length == gridSize1*gridSize2 ) {
         // alert('Now you can press grid size');
         for(let i=0; i<shuffleImagesArray.length; i++){
-        const $img2 = $('<img>').addClass('front');
-        const $img = $('<img>').addClass('back');
-        const $div = $('<div>').attr('id','flipImage'+i).addClass('flipDiv');  
+            const $img2 = $('<img>').addClass('front');
+            const $img = $('<img>').addClass('back');
+            const $div = $('<div>').attr('id','flipImage'+i).addClass('flipDiv');  
         
-        // Adding width property to the cardContainer and  the div holding images    
-        const $deckId = $("#cardContainer");
-        if(gridValue === "2*2"){      
-            $deckId.addClass("container-2*2");
-            $div.addClass("divFlip-2-2");
-        }
-        else if(gridValue === "3*2"){      
-            $deckId.addClass("container-3*2");
-            $div.addClass("divFlip-3-2");
-        }
-        else if(gridValue === "4*2"){      
-            $deckId.addClass("container-4*2");
-            $div.addClass("divFlip-4-2");
-        }
-        else if(gridValue === "4*4"){      
-            $deckId.addClass("container-4*4");
-            $div.addClass("divFlip-4-4");
-        }
+            // Adding width property to the cardContainer and  the div holding images    
+            const $deckId = $("#cardContainer");
+            if(gridValue === "2*2"){      
+                $deckId.addClass("container-2*2");
+                $div.addClass("divFlip-2-2");
+            }
+            else if(gridValue === "3*2"){      
+                $deckId.addClass("container-3*2");
+                $div.addClass("divFlip-3-2");
+            }
+            else if(gridValue === "4*2"){      
+                $deckId.addClass("container-4*2");
+                $div.addClass("divFlip-4-2");
+            }
+            else if(gridValue === "4*4"){      
+                $deckId.addClass("container-4*4");
+                $div.addClass("divFlip-4-4");
+            }
 
-        // appending images to the div         
-        $img.attr('src',imagesArray[i]);
-        $img2.attr('src',backImage.url);
-        $div.append($img2);
-        $div.append($img);  
-        $('#cardContainer').css('outline', '5px solid rgba(23, 27, 158, 0.7)'); 
-        $('#cardContainer').append($div);   
-        
+                // appending images to the div         
+                $img.attr('src',imagesArray[i]);
+                $img2.attr('src',backImage.url);
+                $div.append($img2);
+                $div.append($img);  
+                $('#cardContainer').css('outline', '5px solid rgba(23, 27, 158, 0.7)'); 
+                $('#cardContainer').append($div);             
                   
     }  //  for loop ends here
    // Enables the timer to reset to 0 when the game is restarted
-  resetTimer(nowTime);
+//   resetTimer(nowTime);
   initTime();
 }       // If ends here
  
@@ -167,7 +169,7 @@ const matchFunction = () => {
                     console.log("length.."+matchArray.length);
                     if(matchArray[0] === matchArray[1])
                     {
-                        console.log("Matched");
+                        // console.log("Matched");
                         // If both flipped cards matched then stay the cards, don't flip again when click
                         $(`#${divIdArray[0]}`).off(".flip"); 
                         $(`#${divIdArray[1]}`).off(".flip");
@@ -179,10 +181,11 @@ const matchFunction = () => {
                         totalCards = imagesArray.length/2 ; 
                         if(totalCards == totalMatches){
                             resetTimer(nowTime);
+                            alert(`Congrats, You did in ${second} seconds, with a total of ${moves} moves. Well done!`);
                         }
                     }
                     else{
-                        console.log("not matched");
+                        // console.log("not matched");
                         // If both flipped cards are not matched flip them over
                         $(`#${divIdArray[0]}`).flip(false);
                         $(`#${divIdArray[1]}`).flip(false);
