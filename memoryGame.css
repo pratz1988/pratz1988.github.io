@@ -22,7 +22,7 @@ button {
 main {
     text-align: center;
     margin-top: 30px;
-    outline: 5px solid rgba(23, 27, 158, 0.7);
+    outline: 2px solid rgba(23, 27, 158, 0.7);
     overflow: scroll;
 }
 section {
@@ -92,4 +92,145 @@ section {
 .divFlip-4-4 {
     width: 140px;
     height: 100px;
+ }
+ /* Responsive design  */
+ @media only screen and (max-width: 890px) { 
+
+    [class = "container-3*2"]  {
+        width: 590px;
+        height: 260px;
+    }
+    .divFlip-3-2 {
+        width: 150px;
+        height: 100px;
+     }
+     h1 {
+        font-size: 40px;
+    }
+    button {
+        width: 70px;
+        height: 35px;
+        font-size: 14px;
+        border-radius: 10px;
+        margin: -5px 6px 10px 6px;
+    }
+    .reset {
+        margin-left: 30px;
+        width: 100px;
+        height: 35px;
+        font-size: 13px;
+    }
+    .moves {
+        font-size: 18px;
+    }
+
+   [class = "container-4*4"]  {
+        width: 680px;
+        height: 520px;
+    }
+    .divFlip-4-4 {
+        width: 140px;
+        height: 100px;
+    }
+ }
+
+ @media only screen and (max-width: 780px) { 
+    [class = "container-4*2"]  {
+        width: 620px;
+        height: 345px;
+    }
+    .divFlip-4-2 {
+        width: 130px;
+        height: 140px;
+     }
+     h1 {
+         font-size: 20px;
+     }
+ }
+ @media only screen and (max-width: 655px) { 
+
+    [class = "container-3*2"]  {
+        width: 380px;
+        height: 260px;
+    }
+    .divFlip-3-2 {
+        width: 100px;
+        height: 100px;
+     }
+     h1 {
+        font-size: 40px;
+    }
+    button {
+        width: 50px;
+        height: 25px;
+        font-size: 12px;
+        border-radius: 10px;
+        margin: -5px 6px 10px 6px;
+    }
+    .reset {
+        margin-left: 30px;
+        width: 80px;
+        height: 25px;
+        font-size: 10px;
+    }
+    .moves {
+        font-size: 15px;
+    }
+
+    [class = "container-4*2"]  {
+        width: 500px;
+        height: 325px;
+    }
+    .divFlip-4-2 {
+        width: 100px;
+        height: 130px;
+     }
+ }
+
+ @media only screen and (max-width: 515px) { 
+    [class = "container-4*2"]  {
+        width: 380px;
+        height: 280px;
+    }
+    .divFlip-4-2 {
+        width: 70px;
+        height: 110px;
+     }
+     button {
+        width: 50px;
+        height: 30px;
+        font-size: 12px;
+        border-radius: 12px;
+        margin: -5px 6px 10px 6px;
+    }
+    .reset {
+        margin-left: 40px;
+        width: 90px;
+        height: 30px;
+        font-size: 12px;
+    }
+ }
+
+ @media only screen and (max-width: 410px) { 
+    [class = "container-4*2"]  {
+        width: 380px;
+        height: 280px;
+    }
+    .divFlip-4-2 {
+        width: 70px;
+        height: 110px;
+     }
+     button {
+        width: 50px;
+        height: 30px;
+        font-size: 12px;
+        border-radius: 12px;
+        margin: -5px 6px 10px 6px;
+    }
+    .reset {
+        margin-left: 40px;
+        width: 90px;
+        height: 30px;
+        font-size: 12px;
+    }
  }

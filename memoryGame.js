@@ -15,12 +15,12 @@ $(() => {
     }
 
 // called function for getting API data
-const getImage = (data) => {
+const getImage = (response) => {
     // console.log(data);
-    if(data.url != " ")
-        imagesArray.push(data.url); 
+    
+        imagesArray.push(response.data.images.downsized_large.url); 
         // pushing  duplicate image into an array
-        imagesArray.push(data.url); 
+        imagesArray.push(response.data.images.downsized_large.url); 
         console.log(imagesArray);
   
 }
@@ -28,7 +28,8 @@ const getImage = (data) => {
 const ajaxCall = (gridSize) => {
     for(let i=0; i<gridSize; i++){
         $.ajax({
-            url: 'http://www.splashbase.co/api/v1/images/random'   
+            // url: 'http://www.splashbase.co/api/v1/images/random'   
+            url: 'http://api.giphy.com/v1/gifs/random?api_key=cFAep3nZo1HwaaIyl5dL8fN7sMmqg57m'
             
             }).then(getImage)      
     }
@@ -75,14 +76,17 @@ const init = () => {
         ajaxCall(gridSize); 
         callCondtion++;
     }
-    alert('plz wait until the data loaded from external api');
+    if(imagesArray.length < gridSize1*gridSize2) {
+        alert('click the button again & plz wait the data is loading from external api');
+    }
+    //Calling ShuffleImage function
     if(imagesArray.length >= gridSize1*gridSize2){ 
         shuffleImagesArray = shuffle(imagesArray);
     }
 
        //////  Grid alignment //////////
        if( shuffleImagesArray.length == gridSize1*gridSize2 ) {
-        alert('Now you can press grid size');
+        // alert('Now you can press grid size');
         for(let i=0; i<shuffleImagesArray.length; i++){
         const $img2 = $('<img>').addClass('front');
         const $img = $('<img>').addClass('back');
