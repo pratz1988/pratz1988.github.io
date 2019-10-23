@@ -18,11 +18,11 @@ $(() => {
 // called function for getting API data
 const getImage = (response) => {
     // console.log(data);
-        // imagesArray.push(response.url);
-        // imagesArray.push(response.url);
-        imagesArray.push(response.data.images.downsized_large.url); 
+        imagesArray.push(response.url);
+        imagesArray.push(response.url);
+        // imagesArray.push(response.data.images.downsized_large.url); 
         // pushing  duplicate image into an array
-        imagesArray.push(response.data.images.downsized_large.url); 
+        // imagesArray.push(response.data.images.downsized_large.url); 
         console.log(imagesArray);
   
 }
@@ -30,8 +30,8 @@ const getImage = (response) => {
 const ajaxCall = (gridSize) => {
     for(let i=0; i<gridSize; i++){
         $.ajax({
-            // url: 'http://www.splashbase.co/api/v1/images/random'   
-            url: 'http://api.giphy.com/v1/gifs/random?api_key=cFAep3nZo1HwaaIyl5dL8fN7sMmqg57m'
+            url: 'http://www.splashbase.co/api/v1/images/random'   
+            // url: 'http://api.giphy.com/v1/gifs/random?api_key=cFAep3nZo1HwaaIyl5dL8fN7sMmqg57m'
             
             }).then(getImage)      
     }
