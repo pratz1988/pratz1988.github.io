@@ -12,12 +12,14 @@ $(() => {
     // Object for back image
     var backImage = {
         url : "question-mark-vector-icon.jpg"
+        // url: "background.png"
     }
 
 // called function for getting API data
 const getImage = (response) => {
     // console.log(data);
-    
+        // imagesArray.push(response.url);
+        // imagesArray.push(response.url);
         imagesArray.push(response.data.images.downsized_large.url); 
         // pushing  duplicate image into an array
         imagesArray.push(response.data.images.downsized_large.url); 
@@ -115,8 +117,10 @@ const init = () => {
         $img.attr('src',imagesArray[i]);
         $img2.attr('src',backImage.url);
         $div.append($img2);
-        $div.append($img);   
-        $('#cardContainer').append($div);    
+        $div.append($img);  
+        $('#cardContainer').css('outline', '5px solid rgba(23, 27, 158, 0.7)'); 
+        $('#cardContainer').append($div);   
+        
                   
     }  //  for loop ends here
    // Enables the timer to reset to 0 when the game is restarted
