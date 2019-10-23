@@ -1,5 +1,3 @@
-# pratz1988.github.io
-
 # Pratz's memory game 
 
 I built this memory game as part of my GA ( General Assembely ) SEI bootcamp. The objective of the project was to demonstrate the java script / html / css knowledge by buidling a fully functional applicaiton. You match two cards at a time and once all the cards are matched you win the game. 
