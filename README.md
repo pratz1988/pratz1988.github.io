@@ -1,6 +1,6 @@
 # Pratz's memory game 
 
-I built this memory game as part of my GA ( General Assembely ) SEI bootcamp. The objective of the project was to demonstrate the jQuery / JavaScript / HTML / CSS knowledge by buidling a fully functional applicaiton. You need to match two cards at a time and finish matching all the cards to win the game. The app tracks the time taken to finish the game and also the number of moves taken to finish the game.
+The objective of the project was to demonstrate the jQuery / JavaScript / HTML / CSS knowledge by buidling a fully functional applicaiton. You need to match two cards at a time and finish matching all the cards to win the game. The app tracks the time taken to finish the game and also the number of moves taken to finish the game.
 
 # Setup / Installation
 
@@ -31,4 +31,4 @@ Enhancements
 
 # About the author
 
-prathyusha.jaddu@gmail.com
+prathyusha
